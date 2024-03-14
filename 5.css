@@ -1,0 +1,44 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+h1 {
+    margin: 0px;
+    text-align: center;
+}
+
+header {
+    height: 25%;
+    background-color: lightyellow;
+    overflow: hidden;
+}
+
+nav {
+    width: 15%; height: 67%;
+    background-color: lightcoral;
+    float: left;
+    overflow: hidden;
+}
+
+section {
+    width: 60%; height: 67%;
+    background-color: lightblue;
+    float: left;
+    overflow: scroll;
+}
+
+aside {
+    width: 25%; height: 67%;
+    background-color: rgb(180,115,93);
+    float: left;
+    overflow: scroll;
+}
+
+footer {
+    height: 8%;
+    background-color: plum;
+    clear: left;
+    overflow: hidden;
+}
