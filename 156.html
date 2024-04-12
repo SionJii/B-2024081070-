@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이주형</title>
+</head>
+<body>
+    <h3>회원 가입</h3>
+    <hr>
+    <form>
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text"> <input type="button" value="중복체크"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="password"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>주민등록 번호</td>
+                <td><input type="text" style="max-width: 70px;"> &nbsp;-&nbsp; 
+                    <input type="password" style="max-width: 70px;"></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td>
+                    <select>
+                        <option>010</option>
+                    </select>
+                    &nbsp;-&nbsp;
+                    <input type="text" maxlength="4" style="max-width: 50px;">
+                    &nbsp;-&nbsp; 
+                    <input type="text" maxlength="4" style="max-width: 50px;">
+                </td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td><input type="text" style="width: 200px;"></td>
+            </tr>
+            <tr>
+                <td>세부 주소</td>
+                <td><input type="text" style="width: 200px;"></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type="email" style="width: 200px;"></td>
+            </tr>
+            <tr>
+                <td>사진 올리기</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td>좋아하는 가수</td>
+                <td>
+                    <label><input type="checkbox" checked>소녀시대</label>
+                    <label><input type="checkbox" checked>방탄</label>
+                    <label><input type="checkbox" checked>레드벨벳</label>
+                    <label><input type="checkbox">동방신기</label>
+                </td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <label><input type="radio" checked>남</label>
+                    <label><input type="radio">여</label>
+                </td>
+            </tr>
+            <tr>
+                <td>글 쓰기</td>
+                <td>
+                    <textarea cols="20" rows="5"></textarea><br>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="입력완료">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="reset" value="초기화">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
