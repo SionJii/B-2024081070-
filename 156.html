@@ -3,57 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
     <title>이주형</title>
+    <script type="text/javascript">
+        function idCheck() {
+            if (myform.id.value=="1111"){
+                alert("중복된 아이디입니다.");
+            } else {
+                alert("가능한 아이디입니다.");
+            }
+        }
+
+        function check() {
+            if(myform.id.value.length == 0) {
+                alert("아이디를 입력해주세요");
+                myform.id.focus();
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
+    <form action="result.jsp" name="myform" method="post">
     <h3>회원 가입</h3>
     <hr>
-    <form>
-        <table>
+        <table border="0">
             <tr>
                 <td>아이디</td>
-                <td><input type="text"> <input type="button" value="중복체크"></td>
+                <td><input type="text" name="id" size="20" maxlength="10"> 
+                    <input type="button" value="중복체크" onClick="idCheck()"></td>
             </tr>
-            <tr>
+            <tr> 
                 <td>비밀번호</td>
-                <td><input type="password"></td>
+                <td><input type="password" name="password" size="20" maxlength="10"></td>
             </tr>
             <tr>
                 <td>비밀번호 확인</td>
-                <td><input type="password"></td>
+                <td><input type="password" name="repassword" size="20" maxlength="10"></td>
             </tr>
             <tr>
                 <td>이름</td>
-                <td><input type="text"></td>
+                <td><input type="text" name="name" size="20" maxlength="10"></td>
             </tr>
             <tr>
                 <td>주민등록 번호</td>
-                <td><input type="text" style="max-width: 70px;"> &nbsp;-&nbsp; 
-                    <input type="password" style="max-width: 70px;"></td>
+                <td><input type="text" name="jumin1" size="6" maxlength="6"> &nbsp;-&nbsp; 
+                    <input type="text" name="jumin2" size="7" maxlength="7"></td>
             </tr>
             <tr>
                 <td>전화번호</td>
-                <td>
+                <td><input type="tel" name="phone" size="15" maxlength="11">
+                    <!-- 
                     <select>
                         <option>010</option>
                     </select>
                     &nbsp;-&nbsp;
                     <input type="text" maxlength="4" style="max-width: 50px;">
                     &nbsp;-&nbsp; 
-                    <input type="text" maxlength="4" style="max-width: 50px;">
+                    <input type="text" maxlength="4" style="max-width: 50px;"> 
+                    -->
                 </td>
             </tr>
             <tr>
                 <td>주소</td>
-                <td><input type="text" style="width: 200px;"></td>
+                <td><input type="text" name="adress1" size="30" maxlength="30"></td>
             </tr>
             <tr>
                 <td>세부 주소</td>
-                <td><input type="text" style="width: 200px;"></td>
+                <td><input type="text" name="adress2" size="30" maxlength="30"></td>
             </tr>
             <tr>
                 <td>email</td>
-                <td><input type="email" style="width: 200px;"></td>
+                <td><input type="email" name="email" size="30" maxlength="30"></td>
             </tr>
             <tr>
                 <td>사진 올리기</td>
@@ -62,26 +85,30 @@
             <tr>
                 <td>좋아하는 가수</td>
                 <td>
-                    <label><input type="checkbox" checked>소녀시대</label>
-                    <label><input type="checkbox" checked>방탄</label>
-                    <label><input type="checkbox" checked>레드벨벳</label>
-                    <label><input type="checkbox">동방신기</label>
+                    <label><input type="checkbox" name="singer" value="소녀시대">소녀시대</label>
+                    <label><input type="checkbox" name="singer" value="방탄" checked>방탄</label>
+                    <label><input type="checkbox" name="singer" value="레드벨벳">레드벨벳</label>
+                    <label><input type="checkbox" name="singer" value="동방신기">동방신기</label>
                 </td>
             </tr>
             <tr>
                 <td>성별</td>
                 <td>
-                    <label><input type="radio" checked>남</label>
-                    <label><input type="radio">여</label>
+                    <label><input type="radio" name="gender" value="남" checked>남</label>
+                    <label><input type="radio" name="gender" value="여">여</label>
                 </td>
             </tr>
             <tr>
                 <td>글 쓰기</td>
                 <td>
-                    <textarea cols="20" rows="5"></textarea><br>
+                    <textarea cols="30" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <!-- 버튼과 달리 섭밋은 form에 적혀있는 action 파일로 바로 이동, 아래와 같이 함수를 주면 유효성 검사 후 action으로 이동함 -->
+                    <input type="submit" value="입력완료" onClick="return check()"> 
                     &nbsp;&nbsp;&nbsp;
-                    <input type="submit" value="입력완료">
-                    &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="reset" value="초기화">
                 </td>
             </tr>
