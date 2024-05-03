@@ -17,11 +17,126 @@
         }
 
         function check() {
-            if(myform.id.value.length == 0) {
+            if(myform.id.value.length == 0) { // myform.id.value == "" 로도 쓸 수 있음
                 alert("아이디를 입력해주세요");
-                myform.id.focus();
+                myform.id.focus(); 
                 return false;
             }
+
+            if(myform.password.value.length == 0) {
+                alert("비밀번호를 입력해주세요");
+                myform.password.focus(); 
+                return false;
+            }
+
+            if(myform.password.value.length < 8) {
+                alert("비밀번호가 짧습니다. 8자 이상 입력하세요");
+                myform.password.focus(); 
+                return false;
+            }
+
+            if(!myform.password.value.match(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~,-])|([!,@,#,$,%,^,&,*,?,_,~,-].*[a-zA-Z0-9])/)) {
+                alert("비밀번호는 영문(대소문자 구분), 숫자, 특수문자(!@#$%^&*?_~- 허용) 혼용 8자이상 입력");
+                myform.password.focus(); 
+                return false;
+            }
+
+            if(myform.repassword.value.length == 0) {
+                alert("비밀번호확인을 입력해주세요");
+                myform.repassword.focus(); 
+                return false;
+            }
+
+            if(myform.repassword.value != myform.password.value) {
+                alert("비밀번호를 다시 확인해주세요");
+                myform.repassword.select(); // focus 이동하면서 입력 선택까지 
+                return false;
+            }
+
+            if(myform.name.value.length == 0) {
+                alert("이름을 입력해주세요");
+                myform.name.focus(); 
+                return false;
+            }
+
+            if(myform.jumin1.value.length == 0 || myform.jumin2.value.length == 0) {
+                alert("주민번호를 입력해주세요");
+                myform.jumin1.focus(); 
+                return false;
+            }
+
+            if(myform.jumin1.value.length < 6 || myform.jumin2.value.length < 7) {
+                alert("주민번호가 일부 누락되었습니다");
+                myform.jumin1.focus(); 
+                return false;
+            }
+
+            if(myform.phone.value.length == 0) {
+                alert("전화번호를 입력해주세요");
+                myform.phone.focus(); 
+                return false;
+            }
+
+            if(isNaN(myform.phone.value)) {
+                alert("전화번호에는 숫자만 입력가능합니다");
+                myform.phone.focus(); 
+                return false;
+            }
+
+            if(myform.email.value.length == 0) {
+                alert("이메일을 입력해주세요");
+                myform.email.focus();
+                return false;
+            }
+
+            // 이메일 타입이 생긴 이후로는 필요없음 이메일을 텍스트 입력으로 받을 경우에만
+            if(myform.email.value.indexOf('@') == -1) {
+                alert("이메일 형식이 아닙니다");
+                myform.email.focus();
+                return false;
+            }
+
+            // 지금까지 작성한 것들 한번에 출력해보자
+            str = "지금까지 입력한 것들은: \n";
+            str += myform.id.value +"\n";
+            str += myform.password.value +"\n";
+            str += myform.name.value +"\n";
+            str += myform.phone.value +"\n";
+            str += myform.email.value +"\n";
+
+            flag = false;
+            for(i = 0; i < myform.singer.length; i++) {
+                if(myform.singer[i].checked) {
+                    str += myform.singer[i].value + "\n";
+                    flag = true;
+                }
+            }
+            if(flag == false) {
+                alert("좋아하는 가수를 하나는 선택해야 합니다");
+                return false;
+            }
+
+            flag = false;
+            for(i = 0; i < myform.gender.length; i++) {
+                if(myform.gender[i].checked) {
+                    str += myform.gender[i].value + "\n";
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag == false) {
+                alert("성별을 하나는 선택해야 합니다");
+                return false;
+            }
+
+            if(myform.ta.value.length == 0) {
+                alert("글쓰기 칸이 비어있습니다");
+                return false;
+            }
+
+            str += myform.ta.value;
+
+            alert(str);
         }
     </script>
 </head>
@@ -101,7 +216,7 @@
             <tr>
                 <td>글 쓰기</td>
                 <td>
-                    <textarea cols="30" rows="5"></textarea>
+                    <textarea name="ta" cols="30" rows="5"></textarea>
                 </td>
             </tr>
             <tr>
