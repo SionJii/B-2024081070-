@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이주형</title>
+    <style>
+        div {
+            width: 100px;
+            height: 140px;
+            background-image: url("media/back.jpg");
+            background-size: 100px 140px;
+        }
+        div#img:hover {
+            background-image: url("media/pngegg.png");
+            box-shadow: 0 0 5px blue;
+        }
+        h3#shadow {
+            text-shadow: 3px 3px 5px rgb(197, 64, 86);
+        }
+        img {
+            padding: 10px;
+            border: 15px solid gray;
+            border-image: url("media/bluecheck.jpg") 30 round;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="shadow">:hover 활용</h3>
+    <hr>
+    <table>
+        <tr>
+            <td>마우스를 올리면 카드의 앞면이 보인다.</td>
+            <td><div id="img"></div></td>
+        </tr>
+    </table>
+    <hr>
+    <h3>이미지 테두리 만들기</h3>
+    <hr>
+    <img src="media/climb.jpg" width="200" height="150">
+</body>
+</html>
