@@ -45,12 +45,12 @@
         .sub-img img:hover              {   border              : solid 3px #ffffff;}
         input                           {   display             : none;}
         label                           {   font-size           : 0;}
-        .img-area                       {   width               : 500px;
+        .img-area                       {   width               : 700px;
                                             position            : relative;
                                             height              : 550px;}
         .img-area .sub-img              {   position            : absolute;
                                             top                 : 380px;
-                                            left                : 15%;}
+                                            left                : 0%;}
         .img-area .big-img img          {   display: none;}
         input:checked .big-img img      {   display: none;}
         input:nth-child(1):checked ~ .big-img img:nth-child(1) {    display     : inline-block;}
@@ -58,6 +58,8 @@
         input:nth-child(3):checked ~ .big-img img:nth-child(3) {    display     : inline-block;}
         input:nth-child(4):checked ~ .big-img img:nth-child(4) {    display     : inline-block;}
         input:nth-child(5):checked ~ .big-img img:nth-child(5) {    display     : inline-block;}
+        input:nth-child(6):checked ~ .big-img img:nth-child(6) {    display     : inline-block;}
+        input:nth-child(7):checked ~ .big-img img:nth-child(7) {    display     : inline-block;}
     </style>
 </head>
 <body>
@@ -67,13 +69,13 @@
     <div id="left">
         <h2>포토갤러리</h2>
         <ul>
-            <li><a href="photo_gallary1.html">- 풍경 사진</a></li>
+            <li><a href="photo_gallary1.html">풍경 사진</a></li>
             <li><a href="photo_gallary2.html">나의 일상</a></li>
-            <li><a href="photo_gallary3.html">나의 일상 2</a></li>
+            <li><a href="photo_gallary3.html">- 나의 일상 2</a></li>
         </ul>
     </div>
     <div id="right">
-        <div id="main_title">풍경 사진</div>
+        <div id="main_title">나의 일상</div>
         <ul id="photos">
             <div class="img-area">
                 <input type="radio" id="rad1" name="img_tab" checked>
@@ -81,30 +83,40 @@
                 <input type="radio" id="rad3" name="img_tab">
                 <input type="radio" id="rad4" name="img_tab">
                 <input type="radio" id="rad5" name="img_tab">
+                <input type="radio" id="rad6" name="img_tab">
+                <input type="radio" id="rad7" name="img_tab">
 
                 <div class="sub-img">
                     <label for="rad1">
-                        <img src="media/b-1.jpg" width="80" height="80" alt="이미지">
+                        <img src="media/drive.jpg" width="80" height="80" alt="이미지">
                     </label>
                     <label for="rad2">
-                        <img src="media/b-2.jpg" width="80" height="80" alt="이미지">
+                        <img src="media/jjam.jpg" width="80" height="80" alt="이미지">
                     </label>
                     <label for="rad3">
-                        <img src="media/b-3.jpg" width="80" height="80" alt="이미지">
+                        <img src="media/jajang.jpg" width="80" height="80" alt="이미지">
                     </label>
                     <label for="rad4">
-                        <img src="media/b-4.jpg" width="80" height="80" alt="이미지">
+                        <img src="media/tang.jpg" width="80" height="80" alt="이미지">
                     </label>
                     <label for="rad5">
-                        <img src="media/b-5.jpg" width="80" height="80" alt="이미지">
+                        <img src="media/mango.png" width="80" height="80" alt="이미지">
+                    </label>
+                    <label for="rad6">
+                        <img src="media/me.jpg" width="80" height="80" alt="이미지">
+                    </label>
+                    <label for="rad7">
+                        <img src="media/sans.jpg" width="80" height="80" alt="이미지">
                     </label>
                 </div>
                 <div class="big-img">
-                    <img src="media/b-1.jpg" width="550" height="350" alt="큰 이미지">
-                    <img src="media/b-2.jpg" width="550" height="350" alt="큰 이미지">
-                    <img src="media/b-3.jpg" width="550" height="350" alt="큰 이미지">
-                    <img src="media/b-4.jpg" width="550" height="350" alt="큰 이미지">
-                    <img src="media/b-5.jpg" width="550" height="350" alt="큰 이미지">
+                    <img src="media/drive.jpg" width="550" height="350" alt="큰 이미지">
+                    <img src="media/jjam.jpg" width="550" height="350" alt="큰 이미지">
+                    <img src="media/jajang.jpg" width="550" height="350" alt="큰 이미지">
+                    <img src="media/tang.jpg" width="550" height="350" alt="큰 이미지">
+                    <img src="media/mango.png" width="550" height="350" alt="큰 이미지">
+                    <img src="media/me.jpg" width="550" height="350" alt="큰 이미지">
+                    <img src="media/sans.jpg" width="550" height="350" alt="큰 이미지">
                 </div>
             </div>
         </ul>
